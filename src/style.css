@@ -7,8 +7,6 @@
 }
 
 .search-card{
-    /*backdrop-filter: blur(120px); /* Adjust the blur radius as needed */
-    /*background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
     box-shadow: 12px 17px 85px -5px rgba(84,83,83,0.74);
     -webkit-box-shadow: 12px 17px 85px -5px rgba(84,83,83,0.74);
     -moz-box-shadow: 12px 17px 85px -5px rgba(84,83,83,0.74);

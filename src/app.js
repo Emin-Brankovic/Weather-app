@@ -25,6 +25,11 @@ const getUserLocation=()=>{
   navigator.geolocation.getCurrentPosition(positionSuccess,positionError);
 }
 
+const startApp=()=>{
+  let cityInput=document.getElementById("city-input").value;
+  getCoordinates(cityInput);
+}
+
 const getWeatherIcon=(code,isDay)=>{
   switch (code) {
     case 0: case 1:
@@ -49,8 +54,7 @@ const getWeatherIcon=(code,isDay)=>{
 }
 
 
-const getCoordinates=()=>{
-  let cityInput=document.getElementById("city-input").value;
+const getCoordinates=(cityInput)=>{
   const geocodingURL=`https://geocoding-api.open-meteo.com/v1/search?name=${cityInput}&count=1&language=en&format=json`
   if(document.getElementById("city-input").value === ""){
     alert("You must enter a city");
@@ -100,7 +104,7 @@ const showApp=(currentWeather,dailyWeather)=>{
           <div class="col-xxl-3 col-md-4 px-lg-4">
           <h4 class="fw-bold">Enter a City Name</h4>
               <input type="text" id="city-input" class="py-2 form-control" value="${cityInput}">
-              <button class="btn btn-primary w-100 my-2 p-2" onclick="getCoordinates()" type="submit" >Search</button>
+              <button class="btn btn-primary w-100 my-2 p-2" onclick="startApp()" type="submit" >Search</button>
               <div class="container-fluid ">
                   <div class="row">
                     <div class="col-5 px-0">
